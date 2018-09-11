@@ -9,16 +9,6 @@ from urllib.request import urlopen
 from colorme import ColorMe
 from colortranslate import *
 
-
-def _load_settings(file_):
-    try:
-        with open(file_, 'r') as f:
-            return json.load(f)
-    except Exception as e:
-        stderr.write('Failed to load settings file: `{}`\n'.format(e))
-        exit(1)   
-
-
 def polar_dist(combined_hsi_arrays, input_hsi):
     """
         K-NN for polar distance calculation of 
